@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="profile-form">
+  <h1>Profile Registration</h1>
+  
+    <table>
+    <form id="profileForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <div class="file-area">
+        <form method="post" enctype="multipart/form-data" action="upload.php">
+          <label for="myfile"><img src="파일.png"></label>
+          <input type="file" name="myfile" id="myfile" style="display:none; visibility:none;">
+        </form>
+        <div class="text-area">
+          <input type="text" name="chat" id="chat" title="대화입력" placeholder="대화를 시작해주세요 : )"
+          autocomplete="off" required>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    </table>
+
+  <h2>Existing Profiles:</h2>
+  <ul id="profileList"></ul>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+@import url("http://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-size: cover;
+}
+body::before {
+    content: "";
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(134, 134, 134, 0.767);
+}
+.profile-form {position: relative; z-index: 2;}
+
+.profile-form h1 {
+    font-size: 38px; color:rgb(0, 0, 0) ;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.chat-area table{
+	margin-left:58px;
+	margin-top:-90px;
+	background-color:transparent;
+	border:2px solid black;
+	border-radius:10px;
+	height:805px;
+	width:90%;
+}
+.chat-area img{
+	position:relative;
+	width:46px;
+	height:46px;
+	cursor:pointer;
+	margin-left:1000px;
+	top:722px;
+	right:-10px;
+	z-index:1;
+}
+.chat{
+	position:absolute;
+	border:2px solid black;
+	width:90%;
+	height:50px;
+	top:749px;
+	left:58px;
+}
+.text-area input{
+	position:absolute;
+	padding:15px 10px;
+	font-size:16px;
+	color:black;
+	background-color:#E6FFFF;
+	outline:none;
+	width:90%;
+	height:50px;
+	top:854px;
+	left:58px;
+	border-radius:10px;
+}
+.text-area:first-child { 
+    margin-top: 0;
+}
+</style>
